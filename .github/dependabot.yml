@@ -1,0 +1,36 @@
+# Docs: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# - Checks for updates at the start of each Friday
+# - Updates only explicitly defined dependencies
+# - Creates commit message in compliance with conventional commits
+# - Assignes `Dependencies` label to the pull request
+# [npm]
+# - Increases the minimum version to match the new version
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    schedule:
+      interval: weekly
+      day: friday
+      time: '00:00'
+    allow:
+      - dependency-type: direct
+    commit-message:
+      prefix: 'chore: '
+      include: scope
+    labels:
+      - Dependencies
+    directory: /
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: friday
+      time: '00:00'
+    allow:
+      - dependency-type: direct
+    commit-message:
+      prefix: 'chore: '
+      include: scope
+    labels:
+      - Dependencies
+    versioning-strategy: increase
