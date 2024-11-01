@@ -43,7 +43,7 @@
     "taze": "^0.16.7",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5",
-    "vue-tsc": "^2.0.29"
+    "vue-tsc": "^2.1.10"
   },
   "lint-staged": {
     "*": "eslint --fix"
